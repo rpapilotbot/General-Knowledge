@@ -1,0 +1,11 @@
+{
+	"MapsOfIndiaUrl": "https://www.mapsofindia.com/on-this-day/",
+	"MailTo": "aartiak.e5@gmail.com",
+	"PortNumber": "465",
+	"EmailServer": "smtp.gmail.com",
+	"AssetName": "Maps of India",
+	"StorageBucketName": "Maps of India",
+      "MailSubject": "General Knowledge - ",
+      "PreviousKeywords": ["Also On This Day:","Also On This Day","Other events on this day:","On this day:","Also on this day:","Also on this Day:","Also on This Day:","Also On This day:","Also on this day"],
+      "AfterKeywords": ["References:","References","WB","Related Links:","Biography","Reference","Reference:","Sources and references"]
+}

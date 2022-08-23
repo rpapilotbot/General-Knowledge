@@ -1,0 +1,274 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Extracting_Sequence" this:Extracting_Sequence.in_extractUrl="https://www.mapsofindia.com/on-this-day/" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="out_historycontent" Type="OutArgument(x:String)" />
+    <x:Property Name="out_strTitle" Type="OutArgument(x:String)" />
+    <x:Property Name="in_extractUrl" Type="InArgument(x:String)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>927,647</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Extracting_Sequence_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="36">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+      <x:String>System.Globalization</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="33">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap:VirtualizedContainerService.HintSize="480,427" sap2010:WorkflowViewState.IdRef="Sequence_8">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,335" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+      <TryCatch.Try>
+        <Sequence sap2010:Annotation.AnnotationText="Extracting the History details&#xA;" DisplayName="Extracting_Sequence" sap:VirtualizedContainerService.HintSize="602,3100" sap2010:WorkflowViewState.IdRef="Sequence_1">
+          <Sequence.Variables>
+            <Variable x:TypeArguments="x:String" Name="str_getDate" />
+            <Variable x:TypeArguments="x:String" Name="str_todayDate" />
+            <Variable x:TypeArguments="x:String" Name="str_datetime" />
+            <Variable x:TypeArguments="x:String" Name="str_Historytitle" />
+            <Variable x:TypeArguments="x:Boolean" Name="bool_popup" />
+          </Sequence.Variables>
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="560,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Started Extracting the History&quot;]" />
+          <uix:NApplicationCard WebDriverMode="{x:Null}" AttachMode="ByInstance" ContinueOnError="True" DisplayName="Use Browser Chrome: What Happened on This Day in History - Maps of India" sap:VirtualizedContainerService.HintSize="560,2704" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="Simulate" ScopeGuid="5b52a442-330f-4dee-96a0-840459d4817f" Version="V2">
+            <uix:NApplicationCard.Body>
+              <ActivityAction x:TypeArguments="x:Object">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="526,2488" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign sap:VirtualizedContainerService.HintSize="484,61" sap2010:WorkflowViewState.IdRef="Assign_1">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[str_datetime]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[DateTime.Now.ToString("MMMM dd")]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,91" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Info" Message="[str_datetime]" />
+                  <uix:NGetText DisplayName="Get Text 'On this Day in History'" sap:VirtualizedContainerService.HintSize="484,156" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="5b52a442-330f-4dee-96a0-840459d4817f" Version="V1">
+                    <uix:NGetText.Target>
+                      <uix:TargetAnchorable BrowserURL="https://www.mapsofindia.com/on-this-day/" DesignTimeRectangle="499, 384, 617, 41" FriendlyName="'July 27'" FullSelectorArgument="[String.Format(&quot;&lt;webctrl tag='DIV' aaname='  {0} ' /&gt;&quot;, str_datetime)]" FuzzySelectorArgument="&lt;webctrl parentid='post-48' tag='DIV' type='' class='postdate' /&gt;" Guid="2fc2c657-25a5-4c7d-a9d3-e12f7af9829c" InformativeScreenshot="9eeb4e366c1d3e8ef42b24701f338569.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='What Happened on This Day in History - Maps of India' /&gt;" SearchSteps="FuzzySelector" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="504, 335, 188, 20" ElementType="Text" FriendlyName="'On this Day in History'" FullSelectorArgument="&lt;webctrl parentid='content-main' tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='H1' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='content-main' tag='TABLE' /&gt;&lt;webctrl type='' tag='H1' class='' aaname='On this Day in History' check:innerText='On this Day in History' /&gt;" ImageBase64="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" SearchSteps="Selector, FuzzySelector, Image" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NGetText.Target>
+                    <uix:NGetText.Text>
+                      <OutArgument x:TypeArguments="x:String">[str_getDate]</OutArgument>
+                    </uix:NGetText.Text>
+                  </uix:NGetText>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,91" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[str_getDate]" />
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,91" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Info" Message="[str_getDate=str_datetime]" />
+                  <uix:NClick ClickType="Single" DelayBefore="2" DisplayName="Click 'Read More →'" sap:VirtualizedContainerService.HintSize="484,156" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="5b52a442-330f-4dee-96a0-840459d4817f" Version="V1">
+                    <uix:NClick.Target>
+                      <uix:TargetAnchorable BrowserURL="https://www.mapsofindia.com/on-this-day/" DesignTimeRectangle="801, 443, 90, 17" ElementType="Text" FriendlyName="'Read More →'" FullSelectorArgument="&lt;webctrl aaname='Read More →' tag='A' href='https://www.mapsofindia.com/on-this-day/*' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Read More →' parentid='post-48' tag='A' type='' class='' check:innerText='Read More →' /&gt;" Guid="c49c48d8-3546-47f7-b8d6-a4d08a7de3f3" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAF4AAAAVCAYAAADPTVnBAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJxSURBVFhH7ZaxUQMxEEXdkbvAiQsgJHMFboACnEPsKohdhAtwSOxU6HH+5t+edMBgc4bRn9GcTtpd/f27mrtZMux2uzSbzdJ2uz2t3AaOx2NarVbv3Obzedrv96edv4ue8A2/hyb8RGjCT4Qm/ES4KeH5pudvaP6Ynhb+MQbCv76mtFjkjbzjI//wXB2Pj534NcABLqXi4MceMf4CMtU+SC7/seVfttNCBknFtUtDBR8rMKLe3aV0f9/ZC/CCH8Lf2J9wFQPhS9ddibko8WYwlxilWxNjlmzGiosvMZ6euqe4+HrkSKFqsZXny8twX7dH4xrFzGH7gGy8rhzswkKQzhNRJS8/1jebbg54JzElgDgk5CIxJ4YXx8HZdDqxOEexxBd/cYx8QMyBPTi4DVA8gbhjDfEVoEX07wmvLvQKR5FcAAc+NeEkBDFKZ4CYcIQLq7PoVp3p55e4wFfN4nwc+EUO4httv4OSZj3h2aC6umKMmAAEfN+Hk2bue+oaF1CQELEYDhdTPBVT/pxZi4WdhPe5ID/nHLlHcEbJfmyIV55+IIpCIlEkF6AEFcYT97gl/1JHRMBFMbH3LvT3uCc4B58LNb9LgNijHU9yDEFkfG1M+Fq38a4YPKN/SQjHZ6J4B9dsPTfnI3x2xk/w/DzM7Sx8TTSI0MEiRHJcPbcjKL6HwzCG/LXG06+u4sViOFzYEoipwikPF7a07xwFfGQnYFey/SnOwnNYreIQcrEkpg/5xT2S9GumxH1/vR5PjpjY1QoDPxdaufgZ8h3LM3KLvpdEDt0wBc7CL5f9SrdxnfHw0Omdpw1ToAk/EZrwkyClN6PQaW0Okj4KAAAAAElFTkSuQmCC" InformativeScreenshot="2533624dd079ce45873c2b3d08417d75.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='What Happened on This Day in History - Maps of India' /&gt;" SearchSteps="Selector, FuzzySelector" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target DesignTimeRectangle="534, 255, 169, 18" ElementType="Text" FriendlyName="'On this Day in History'" FullSelectorArgument="&lt;webctrl parentid='content-main' tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='H1' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='content-main' tag='TABLE' /&gt;&lt;webctrl type='' tag='H1' class='' aaname='On this Day in History' check:innerText='On this Day in History' /&gt;" ImageBase64="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" SearchSteps="Selector, FuzzySelector, Image" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NClick.Target>
+                  </uix:NClick>
+                  <ui:UiElementExists DisplayName="Element Exists 'DIV  ad_position_box'" Exists="[bool_popup]" sap:VirtualizedContainerService.HintSize="484,106" sap2010:WorkflowViewState.IdRef="UiElementExists_2">
+                    <ui:UiElementExists.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="91e0eb8c-5e3e-4bc8-91c8-f2f3b952a6f4" InformativeScreenshot="2f000912b99d37d5a15f729e85e7c392" Selector="&lt;webctrl id='aswift_*' tag='IFRAME' /&gt;&lt;webctrl tag='DIV' /&gt;" TimeoutMS="20000">
+                        <ui:Target.WaitForReady>
+                          <InArgument x:TypeArguments="ui:WaitForReady" />
+                        </ui:Target.WaitForReady>
+                      </ui:Target>
+                    </ui:UiElementExists.Target>
+                  </ui:UiElementExists>
+                  <If Condition="[bool_popup]" sap:VirtualizedContainerService.HintSize="484,614" sap2010:WorkflowViewState.IdRef="If_3">
+                    <If.Then>
+                      <Sequence sap:VirtualizedContainerService.HintSize="376,426" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:SendHotkey ClickBeforeTyping="{x:Null}" DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" EmptyField="{x:Null}" SendWindowMessages="{x:Null}" Activate="True" DisplayName="Send Hotkey" sap:VirtualizedContainerService.HintSize="334,136" sap2010:WorkflowViewState.IdRef="SendHotkey_1" Key="f5" KeyModifiers="None" SpecialKey="True">
+                          <ui:SendHotkey.Target>
+                            <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="b0c23ecc-7723-41fa-af16-5bd3b3751ada">
+                              <ui:Target.TimeoutMS>
+                                <InArgument x:TypeArguments="x:Int32" />
+                              </ui:Target.TimeoutMS>
+                              <ui:Target.WaitForReady>
+                                <InArgument x:TypeArguments="ui:WaitForReady" />
+                              </ui:Target.WaitForReady>
+                            </ui:Target>
+                          </ui:SendHotkey.Target>
+                        </ui:SendHotkey>
+                        <uix:NClick ClickType="Single" ContinueOnError="True" DisplayName="Click 'Read More →'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NClick_4" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="5b52a442-330f-4dee-96a0-840459d4817f" Timeout="5" Version="V1">
+                          <uix:NClick.Target>
+                            <uix:TargetAnchorable BrowserURL="https://www.mapsofindia.com/on-this-day/" DesignTimeRectangle="801, 443, 90, 17" ElementType="Text" FriendlyName="'Read More →'" FullSelectorArgument="&lt;webctrl aaname='Read More →' tag='A' href='https://www.mapsofindia.com/on-this-day/*' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Read More →' parentid='post-48' tag='A' type='' class='' check:innerText='Read More →' /&gt;" Guid="c49c48d8-3546-47f7-b8d6-a4d08a7de3f3" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAF4AAAAVCAYAAADPTVnBAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJxSURBVFhH7ZaxUQMxEEXdkbvAiQsgJHMFboACnEPsKohdhAtwSOxU6HH+5t+edMBgc4bRn9GcTtpd/f27mrtZMux2uzSbzdJ2uz2t3AaOx2NarVbv3Obzedrv96edv4ue8A2/hyb8RGjCT4Qm/ES4KeH5pudvaP6Ynhb+MQbCv76mtFjkjbzjI//wXB2Pj534NcABLqXi4MceMf4CMtU+SC7/seVfttNCBknFtUtDBR8rMKLe3aV0f9/ZC/CCH8Lf2J9wFQPhS9ddibko8WYwlxilWxNjlmzGiosvMZ6euqe4+HrkSKFqsZXny8twX7dH4xrFzGH7gGy8rhzswkKQzhNRJS8/1jebbg54JzElgDgk5CIxJ4YXx8HZdDqxOEexxBd/cYx8QMyBPTi4DVA8gbhjDfEVoEX07wmvLvQKR5FcAAc+NeEkBDFKZ4CYcIQLq7PoVp3p55e4wFfN4nwc+EUO4httv4OSZj3h2aC6umKMmAAEfN+Hk2bue+oaF1CQELEYDhdTPBVT/pxZi4WdhPe5ID/nHLlHcEbJfmyIV55+IIpCIlEkF6AEFcYT97gl/1JHRMBFMbH3LvT3uCc4B58LNb9LgNijHU9yDEFkfG1M+Fq38a4YPKN/SQjHZ6J4B9dsPTfnI3x2xk/w/DzM7Sx8TTSI0MEiRHJcPbcjKL6HwzCG/LXG06+u4sViOFzYEoipwikPF7a07xwFfGQnYFey/SnOwnNYreIQcrEkpg/5xT2S9GumxH1/vR5PjpjY1QoDPxdaufgZ8h3LM3KLvpdEDt0wBc7CL5f9SrdxnfHw0Omdpw1ToAk/EZrwkyClN6PQaW0Okj4KAAAAAElFTkSuQmCC" InformativeScreenshot="2533624dd079ce45873c2b3d08417d75.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='What Happened on This Day in History - Maps of India' /&gt;" SearchSteps="Selector, FuzzySelector" Visibility="Interactive">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target DesignTimeRectangle="534, 255, 169, 18" ElementType="Text" FriendlyName="'On this Day in History'" FullSelectorArgument="&lt;webctrl parentid='content-main' tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='H1' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='content-main' tag='TABLE' /&gt;&lt;webctrl type='' tag='H1' class='' aaname='On this Day in History' check:innerText='On this Day in History' /&gt;" ImageBase64="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" SearchSteps="Selector, FuzzySelector, Image" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NClick.Target>
+                        </uix:NClick>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence sap2010:WorkflowViewState.IdRef="Sequence_10">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                  <Sequence sap:VirtualizedContainerService.HintSize="484,708" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <uix:NGetText DelayBefore="2" DisplayName="Get Text 'July 27'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="5b52a442-330f-4dee-96a0-840459d4817f" Version="V1">
+                      <uix:NGetText.Target>
+                        <uix:TargetAnchorable BrowserURL="https://www.mapsofindia.com/on-this-day/july-27-1992-popular-bollywood-actor-amjad-khan-dies" DesignTimeRectangle="571, 234, 411, 32" ElementType="Text" FriendlyName="'July 27'" FullSelectorArgument="&lt;webctrl tag='H1' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H1' type='' class='' /&gt;" Guid="85f75a7c-b524-416a-bd4e-f0cdfd804c42" ImageBase64="" InformativeScreenshot="b344dc9c46c08181ee7ccbf3a753581d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='July 27 1992 - Popular Bollywood Actor Amjad Khan Dies -' /&gt;" SearchSteps="Selector, FuzzySelector" Visibility="Interactive" />
+                      </uix:NGetText.Target>
+                      <uix:NGetText.Text>
+                        <OutArgument x:TypeArguments="x:String">[out_strTitle]</OutArgument>
+                      </uix:NGetText.Text>
+                    </uix:NGetText>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="Info" Message="[out_strTitle]" />
+                    <uix:NGetText DelayBefore="2" DisplayName="Get Text '﻿On 27th July'" sap:VirtualizedContainerService.HintSize="334,156" sap2010:WorkflowViewState.IdRef="NGetText_3" ScopeIdentifier="5b52a442-330f-4dee-96a0-840459d4817f" Version="V1">
+                      <uix:NGetText.Target>
+                        <uix:TargetAnchorable BrowserURL="https://www.mapsofindia.com/on-this-day/july-27-1992-popular-bollywood-actor-amjad-khan-dies" DesignTimeRectangle="571, 266, 468, 1152" FriendlyName="'﻿On 27th July'" FullSelectorArgument="&lt;webctrl parentid='content-main' tag='DIV' class='content-panel2' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' class='content-panel2' parentid='content-main' tag='DIV' aaname='  ' /&gt;" Guid="545cd904-8d47-4c0a-8ab7-9f18d27790fe" ImageBase64="" InformativeScreenshot="04eec8ef0018239300147d44cd342f4c.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='July 27 1992 - Popular Bollywood Actor Amjad Khan Dies -' /&gt;" SearchSteps="Selector, FuzzySelector" Visibility="Interactive" />
+                      </uix:NGetText.Target>
+                      <uix:NGetText.Text>
+                        <OutArgument x:TypeArguments="x:String">[out_historycontent]</OutArgument>
+                      </uix:NGetText.Text>
+                    </uix:NGetText>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Info" Message="[out_historycontent]" />
+                  </Sequence>
+                </Sequence>
+              </ActivityAction>
+            </uix:NApplicationCard.Body>
+            <uix:NApplicationCard.TargetApp>
+              <uix:TargetApp Area="-8, -8, 1616, 876" BrowserType="Chrome" IconBase64="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" InformativeScreenshot="654f93892eb6c489d38354b71a20d751.png" Selector="&lt;html app='chrome.exe' title='What Happened on This Day in History - Maps of India' /&gt;" Url="[in_extractUrl]" />
+            </uix:NApplicationCard.TargetApp>
+          </uix:NApplicationCard>
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="560,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Ended Extracting the History&quot;]" />
+        </Sequence>
+      </TryCatch.Try>
+      <TryCatch.Catches>
+        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ActivityAction x:TypeArguments="s:Exception">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+            </ActivityAction.Argument>
+            <Sequence sap:VirtualizedContainerService.HintSize="376,245" sap2010:WorkflowViewState.IdRef="Sequence_11">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[exception.Message]" />
+              <Rethrow sap:VirtualizedContainerService.HintSize="334,22" sap2010:WorkflowViewState.IdRef="Rethrow_1" />
+            </Sequence>
+          </ActivityAction>
+        </Catch>
+      </TryCatch.Catches>
+    </TryCatch>
+  </Sequence>
+</Activity>

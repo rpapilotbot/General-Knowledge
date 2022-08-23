@@ -1,0 +1,151 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Extract_mail_sequence" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:this="clr-namespace:" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:umab="clr-namespace:UiPath.Mail.Activities.Business;assembly=UiPath.Mail.Activities" xmlns:umabh="clr-namespace:UiPath.Mail.Activities.Business.HtmlEditor;assembly=UiPath.Mail.Activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_recieverEmailAddress" Type="InArgument(x:String)" />
+    <x:Property Name="In_SubjectName" Type="InArgument(x:String)" />
+    <x:Property Name="In_BodyName" Type="InArgument(x:String)" />
+    <x:Property Name="In_portNumber" Type="InArgument(x:Int32)" />
+    <x:Property Name="In_serverName" Type="InArgument(x:String)" />
+    <x:Property Name="In_SenderEmailAddress" Type="InArgument(x:String)" />
+    <x:Property Name="In_SenderEmailPassword" Type="InArgument(x:String)" />
+    <x:Property Name="in_manyrecieverEmailAddress" Type="InArgument(x:String)" />
+    <x:Property Name="in_Extract_DataTable" Type="InArgument(sd:DataTable)" />
+  </x:Members>
+  <this:Extract_mail_sequence.in_recieverEmailAddress>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Extract_mail_sequence.in_recieverEmailAddress>
+  <this:Extract_mail_sequence.In_SubjectName>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Extract_mail_sequence.In_SubjectName>
+  <this:Extract_mail_sequence.In_BodyName>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Extract_mail_sequence.In_BodyName>
+  <this:Extract_mail_sequence.In_portNumber>
+    <InArgument x:TypeArguments="x:Int32" />
+  </this:Extract_mail_sequence.In_portNumber>
+  <this:Extract_mail_sequence.In_serverName>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Extract_mail_sequence.In_serverName>
+  <this:Extract_mail_sequence.In_SenderEmailAddress>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Extract_mail_sequence.In_SenderEmailAddress>
+  <this:Extract_mail_sequence.In_SenderEmailPassword>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Extract_mail_sequence.In_SenderEmailPassword>
+  <this:Extract_mail_sequence.in_manyrecieverEmailAddress>
+    <InArgument x:TypeArguments="x:String" />
+  </this:Extract_mail_sequence.in_manyrecieverEmailAddress>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>927,1155</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>Extract_mail_sequence_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="35">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>UiPath.Mail</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Mail.SMTP.Activities</x:String>
+      <x:String>UiPath.Mail.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.Mail.Activities.Business.HtmlEditor</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.Mail.Activities.Business</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="26">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.Web.Activities</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Extract_mail_sequence" sap:VirtualizedContainerService.HintSize="518,1090" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence sap2010:Annotation.AnnotationText="Topics:-&#xA;   Extract the required output and send to the email(given user ie  some group of people)" DisplayName="Email_sequence_for_maps_of_india_output" sap:VirtualizedContainerService.HintSize="476,998" sap2010:WorkflowViewState.IdRef="Sequence_2">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="Html_content1" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Email_sequence_for maps of india output is started&quot;]" />
+      <ui:Comment sap:VirtualizedContainerService.HintSize="434,208" sap2010:WorkflowViewState.IdRef="Comment_1" Text="In this sequence we have send mail form the particular user.&#xA;&#xA;We have 2 activites:&#xA;1.Log message -&#xA;&#xA;2.Smtp email activity -&#xA;    short description:-&#xA;        SMTP ---&gt;Simple Mail Transfer Protocol&#xA;        It is basic standard that mail servers use to send email to one another across the internet." />
+      <umab:CreateHtmlContent DisplayName="Create HTML Content" sap:VirtualizedContainerService.HintSize="434,151" HtmlContent="[Html_content1]" sap2010:WorkflowViewState.IdRef="CreateHtmlContent_1">
+        <umab:CreateHtmlContent.HtmlContentArg>
+          <umabh:HtmlContentArgument FilePath=".data/HtmlContent0.html">
+            <umabh:HtmlContentArgument.RuntimeImages>
+              <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
+            </umabh:HtmlContentArgument.RuntimeImages>
+            <umabh:HtmlContentArgument.ValueMappings>
+              <scg:List x:TypeArguments="umabh:HtmlValueMappingBase" Capacity="4">
+                <umabh:HtmlTableValueMapping Name="Table" Value="[in_Extract_DataTable]" />
+              </scg:List>
+            </umabh:HtmlContentArgument.ValueMappings>
+          </umabh:HtmlContentArgument>
+        </umab:CreateHtmlContent.HtmlContentArg>
+      </umab:CreateHtmlContent>
+      <ui:SendMail Bcc="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" ReplyTo="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" Body="[Html_content1]" Cc="[in_manyrecieverEmailAddress]" DisplayName="Send SMTP Mail Message" Email="[In_SenderEmailAddress]" EnableSSL="True" sap:VirtualizedContainerService.HintSize="434,148" sap2010:WorkflowViewState.IdRef="SendMail_1" IsBodyHtml="True" Password="[In_SenderEmailPassword]" Port="[In_portNumber]" SecureConnection="Auto" Server="[In_serverName]" Subject="[In_SubjectName]" To="[in_recieverEmailAddress]">
+        <ui:SendMail.Files>
+          <scg:List x:TypeArguments="InArgument(x:String)" Capacity="0" />
+        </ui:SendMail.Files>
+      </ui:SendMail>
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Email_sequence_for maps of india output is ended&quot;]" />
+    </Sequence>
+  </Sequence>
+</Activity>
